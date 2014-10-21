@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="foodApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0">
+  <title>Food App</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
+  <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
+<body>
+  <!-- <ng-view></ng-view> -->
+  
+  <parentdirective>
+
+    <div class="container" ng-controller="TypeAheadController">
+      <h1>What did you like in Breakfast</h1>
+      <typeahead items="foodItems" prompt="Start typing food items" title="name" model="name" on-select="onItemSelected()" save-items="saveItems()" likes="likeFoodItemsArray" />
+    </div>
+
+    <div class="container" ng-controller="TypeAheadController">
+      <h1>What did you dislike in Breakfast</h1>
+      <typeahead items="foodItems" prompt="Start typing food items" title="name" model="name" on-select="onItemSelected()" save-items="saveItems()" likes="likeFoodItemsArray" />
+    </div>
+
+    <input type="button" value="submit" ng-click="submitResponse()">
+  </parentdirective>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="js/angular-resource.min.js"></script>
+  <script src="js/angular-sanitize.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

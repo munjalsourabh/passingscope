@@ -1,0 +1,15 @@
+<input type="text" ng-model="model" placeholder="{{prompt}}" ng-keydown="selected=false" />
+<input type="button" value="Done" ng-click="saveItems()"/>
+<br/>
+
+<div  ng-hide="!model.length || selected">
+  <div  class= "item" ng-repeat="item in foodItems | filter:model" ng-click="handleSelection(item)" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">
+    <p  class="title">{{item}}</p>
+    
+  </div> 
+</div>
+ <ul>
+  	<li ng-repeat="foodItem in likeItems" ng-show="!model.length || selected">
+{{foodItem}}</li>
+
+  </ul>
